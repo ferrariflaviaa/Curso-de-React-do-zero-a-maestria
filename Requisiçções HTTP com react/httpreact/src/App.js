@@ -74,6 +74,7 @@ function App() {
               type="text"
               value={name}
               name="name"
+              required
               onChange={(e) => setName(e.target.value)}
             />
           </label>
@@ -83,10 +84,16 @@ function App() {
               type="text"
               value={price}
               name="price"
+              required
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="criar" />
+          {/* 7 = state de loading */}
+          {loading ? (
+            <input type="submit" disabled value="Aguarde" />
+          ) : (
+            <input type="submit" value="Criar" />
+          )}
         </form>
       </div>
     </div>
